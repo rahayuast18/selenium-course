@@ -3,6 +3,7 @@ package selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class UpdateDropdown {
 
@@ -28,7 +29,7 @@ public class UpdateDropdown {
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("[id='hrefDecAdt']")).click();
 		driver.findElement(By.xpath("//input[@id='btnclosepaxoption']")).click();
-		System.out.println(driver.findElement(By.cssSelector("#divpaxinfo")).getText());
+		Assert.assertEquals(driver.findElement(By.cssSelector("#divpaxinfo")).getText(), "5 Adult");
 		driver.close();
 	}
 
